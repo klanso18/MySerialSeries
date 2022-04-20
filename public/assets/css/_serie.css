@@ -8,15 +8,15 @@ h2 {
 
 .page {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 2fr;
 }
 
 .description {
+    padding: 2rem;
     text-align: right;
 }
 
 .description > p {
-    margin-left: 8rem;
     text-align: left;
 }
 
@@ -29,12 +29,11 @@ h2 {
 .description > button {
     padding-left: 3rem;
     padding-right: 3rem;
-    margin-top: 4rem;
-    margin-right: 2rem;
 }
 
 .titre > h2 {
     padding-bottom: 1.5rem;
+    min-width: 100%;
 }
 
 .bloc1 {
@@ -52,7 +51,7 @@ img {
     min-width: 100%;
 }
 
-.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+/* .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     margin-left: 5rem;
     margin-right: 5rem;
 }
@@ -61,9 +60,16 @@ img {
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
         max-width: 90%;
     }
+} */
+
+@media screen and (min-width: 992px) {
+    .page {
+        grid-template-columns: 1fr 3fr;
+    }
 }
 
-@media screen and (max-width: 700px) {
+
+@media screen and (max-width: 768px) {
     .page {
         grid-template-columns: 1fr;
         text-align: center;
