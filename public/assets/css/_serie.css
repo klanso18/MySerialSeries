@@ -46,7 +46,7 @@ form {
     padding-top: 1rem;
 }
 
-img {
+.img-fluid {
     border-radius: 10px;
     min-width: 100%;
 }
