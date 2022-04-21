@@ -27,8 +27,8 @@ h2 {
 }
 
 .description > button {
-    padding-left: 3rem;
-    padding-right: 3rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
 
 .titre > h2 {
@@ -46,7 +46,7 @@ form {
     padding-top: 1rem;
 }
 
-.img-fluid {
+.affiche > .img-fluid {
     border-radius: 10px;
     min-width: 100%;
 }

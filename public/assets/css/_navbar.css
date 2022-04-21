@@ -21,13 +21,13 @@
 .nav-link,
 .nav-link:focus {
     color: inherit;
-    color: var(--bs-secondary);
+    color: var(--foreground-primary);
 }
 
 .navbar-brand:hover,
 .nav-link:hover {
     color: inherit;
-    color: var(--foreground-primary);
+    color: var(--bs-secondary);
 }
 
 .navbar-brand {
