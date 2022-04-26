@@ -1,5 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto&display=swap');
+@import '_category.css';
 @import '_global.css';
 @import '_serie.css';
 @import '_var.css';
