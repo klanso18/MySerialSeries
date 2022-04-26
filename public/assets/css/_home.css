@@ -11,14 +11,12 @@
     font-family: var(--bs-font-monospace);
     color: rgb(var(--bs-primary-rgb));
     font-size: 5rem;
-    margin-top: 15rem;
     padding: 2rem;
     text-shadow: 2px 2px 4px rgb(0 0 0 / 50%);
 }
 
 .logo-home > .img-fluid {
     border-radius: 10px;
-    margin-top: 10rem;
     box-shadow: 2px 2px 4px #000000;
 }
 
@@ -27,6 +25,8 @@
     padding-left: 3rem;
     padding-right: 3rem;
     background-color: rgb(var(--bs-primary-rgb));
+    font-family: var(--bs-font-monospace);
+    font-size: 1.7rem;
 }
 
 .logo-home {
