@@ -1,0 +1,52 @@
+{% extends "layout.html.twig" %}
+
+{% block content %}
+<section class="editor">
+    <h1>Serial Editor</h1>
+    <h2>Add, modify, delete...</h2>
+    <form>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select class="form-select" aria-label="Default select example">
+                <option selected>Select a category</option>
+                <option value="1">Thriller</option>
+                <option value="2">Horor</option>
+                <option value="3">Comedy</option>
+                <option value="4">Japanese animation</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="title" class="form-label">Title</label>
+            <input type="title" class="form-control" id="title" aria-describedby="titleHelp">
+        </div>
+        <div class="mb-3">
+            <label for="synopsis" class="form-label">Synopsis</label>
+            <textarea class="form-control ckeditor" id="synopsis" rows="5"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="formFile" class="form-label">Picture</label>
+            <input class="form-control" type="file" id="formFile">
+        </div>
+        <div class="submit">
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </div>
+    </form>
+</section>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
+<script>
+    const editors = document.querySelectorAll('.ckeditor');
+    editors.forEach(function(editor) {
+        ClassicEditor.create(editor, {
+                mediaEmbed: {
+                previewsInData: true
+            }
+            }).then(editor => {
+                console.log(editor);
+            }).catch(error => {
+                console.error(error);
+            });
+    });
+
+</script>
+{% endblock %}
