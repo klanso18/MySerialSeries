@@ -23,9 +23,13 @@
     
     <main class="container mt-4">
     {% block content %}{% endblock %}
+    <!--Include SIGN IN-->
     {% include "_sign.html.twig" %}
+
+    <main class="container mt-auto">
+        {% block content %}
+        {% endblock %}
     </main>
-    
     
     {% include "_footer.html.twig" %}
 		<!-- JavaScript Bundle with Popper -->
