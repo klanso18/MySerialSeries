@@ -3,9 +3,10 @@
 {% block content %}
     <h1 class="text-center mt-5">
         Category
-        	
+                	
+            
     </h1>
-    
+
     <!-- Swiper -->
     {# <h2>Comedy</h2> #}
     {% for category in categories %}
@@ -18,49 +19,54 @@
                     <div class="swiper-slide" style="max: width 540px;">
                         <a href>
                             <img class="img-fluid" src="/assets/images/japanese animation/{{ serie.image }}" alt="" />
-                                
+
+                        </div>
+                    </a>
+                    <div class="swiper-slide">
+                        <a href>
+                            <img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">
+                                Shameless
+                                                                
                             </div>
                         </a>
                         <div class="swiper-slide">
                             <a href>
                                 <img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">
                                     Shameless
+                                                                        
                                 </div>
                             </a>
                             <div class="swiper-slide">
                                 <a href>
                                     <img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">
                                         Shameless
+                                                                                
                                     </div>
                                 </a>
                                 <div class="swiper-slide">
                                     <a href>
                                         <img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">
                                             Shameless
+                                                                                        
                                         </div>
                                     </a>
-                                    <div class="swiper-slide">
-                                        <a href>
-                                            <img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">
-                                                Shameless
-                                            </div>
-                                        </a>
-                                    </div>
+                                </div>
 
-                                    <div class="swiper-button-next"></div>
-                                    <div class="swiper-button-prev"></div>
-                                    <div class="swiper-pagination">
-                                        titre
-                                    </div>
-                                {% endfor %}
-                            </section>
-                        {% endfor %}
+                                <div class="swiper-button-next"></div>
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-pagination">
+                                    titre
+                                                                        
+                                </div>
+                            {% endfor %}
+                        </section>
+                    {% endfor %}
 
-                        <!-- Swiper JS -->
-                        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                    <!-- Swiper JS -->
+                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-                        <!-- Initialize Swiper -->
-                        <script>
+                    <!-- Initialize Swiper -->
+                    <script>
 		var swiper = new Swiper(".mySwiper", {
 slidesPerView: 3,
 centerMode: true,
@@ -98,4 +104,5 @@ spaceBetween: 50
 }
 });
 	</script>
-                    {% endblock %}
+                {% endblock %}
+                
