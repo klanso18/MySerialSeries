@@ -26,7 +26,7 @@ CREATE TABLE `category` (
   `id` int NOT NULL AUTO_INCREMENT,
   `title` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -58,11 +58,10 @@ CREATE TABLE `serie` (
   `image` varchar(45) DEFAULT NULL,
   `description` text, 
   `category_id` int DEFAULT NULL,
-  `category_id1` int NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_serie_category_idx` (`category_id1`),
-  CONSTRAINT `fk_serie_category` FOREIGN KEY (`category_id1`) REFERENCES `category` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  KEY `fk_serie_category_idx` (`category_id`),
+  CONSTRAINT `fk_serie_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -71,15 +70,25 @@ CREATE TABLE `serie` (
 
 LOCK TABLES `serie` WRITE;
 /*!40000 ALTER TABLE `serie` DISABLE KEYS */;
-INSERT INTO `serie` VALUES (1, 'Jijutsu kaizen0', 1, 'Jijutsu_kaizen0.jpg', 'Desc',1,1),
-(2, 'Jijutsu kaizen', 2, 'Jijutsu_kaizen.jpg', 'Desc', 1,1),
-(3, 'Demon Slayers', 3, 'Demonslayer1.jpg', 'Desc', 1,1),
-(4, 'Attack on Titans', 4, 'attack on titan.jpg', 'Desc', 1,1),
-(5, 'The walking dead', 5, '');
-
-
-
-
+INSERT INTO `serie` VALUES 
+(1, 'Jijutsu kaizen0', 1, 'Jijutsu_kaizen0.jpg', 'Desc',1),
+(2, 'Jijutsu kaizen', 2, 'Jijutsu_kaizen.jpg', 'Desc',1),
+(3, 'Demon Slayers', 3, 'Demonslayer1.jpg', 'Desc',1),
+(4, 'One Piece', 4, 'onepieceS1.jpg', 'Desc',1),
+(5, 'Attack on Titans', 5, 'attack_on_titans.jpg', 'Desc',1),
+(6, 'The walking dead', 6, 'walkingdead.jpeg', 'Desc',2),
+(7, 'Dark', 7, 'dark.jpeg', 'Desc',2),
+(8, 'Game of Thrones', 8, 'goat.jpeg', 'Desc',2),
+(9, 'Stranger Things', 9, 'strangerThings.jpeg', 'Desc',2),
+(10, 'Rick and Morty', 10, 'rick_morty.jpg', 'Desc',3),
+(11, 'Sex Education', 11, 'sex_education.jpg', 'Desc',3),
+(12, 'Shameless', 12, 'shameless.jpg', 'Desc',3),
+(13, 'Peacemaker', 13, 'peacemakerS1.jpg', 'Desc',3),
+(14, 'Upload', 14, 'upload.jpg', 'Desc',3),
+(15, 'Breaking Bad', 15, 'breakingbad.jpg', 'Desc',4),
+(16, 'Dexter', 16, 'dexter.jpeg', 'Desc',4),
+(17, 'Ozark', 17, 'ozark.jpeg', 'Desc',4),
+(18, 'You', 18, 'you.jpeg', 'Desc',4);
 
 
 /*!40000 ALTER TABLE `serie` ENABLE KEYS */;
@@ -101,7 +110,7 @@ CREATE TABLE `user` (
   `email` varchar(80) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -125,14 +134,12 @@ CREATE TABLE `seen` (
   `is_completed` tinyint DEFAULT NULL,
   `user_id` int DEFAULT NULL,
   `serie_id` int DEFAULT NULL,
-  `serie_id1` int NOT NULL,
-  `user_id1` int NOT NULL,
   PRIMARY KEY (`id`),
-  KEY `fk_seen_serie1_idx` (`serie_id1`),
-  KEY `fk_seen_user1_idx` (`user_id1`),
-  CONSTRAINT `fk_seen_serie1` FOREIGN KEY (`serie_id1`) REFERENCES `serie` (`id`),
-  CONSTRAINT `fk_seen_user1` FOREIGN KEY (`user_id1`) REFERENCES `user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+  KEY `fk_seen_serie_idx` (`serie_id`),
+  KEY `fk_seen_user_idx` (`user_id`),
+  CONSTRAINT `fk_seen_serie` FOREIGN KEY (`serie_id`) REFERENCES `serie` (`id`),
+  CONSTRAINT `fk_seen_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --

@@ -2,63 +2,26 @@
 
 {% block content %}
     <h1 class="text-center mt-5">
-        Category
-                	
-            
+        Category 
     </h1>
-
     <!-- Swiper -->
     {# <h2>Comedy</h2> #}
     {% for category in categories %}
         <section class="swiper mySwiper mb-5 mx-5">
             <h2 class="mb-5">
                 {{ category.title }}
-            </h2>
-            {% for serie in series %}
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide" style="max: width 540px;">
-                        <a href>
-                            <img class="img-fluid" src="/assets/images/japanese animation/{{ serie.image }}" alt="" />
-
-                        </div>
-                    </a>
+            </h2>	
+			<div class="swiper-wrapper">
+			{% for serie in series|filter(serie => category.id == serie.category_id) %}
                     <div class="swiper-slide">
-                        <a href>
-                            <img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">
-                                Shameless
-                                                                
-                            </div>
-                        </a>
-                        <div class="swiper-slide">
-                            <a href>
-                                <img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">
-                                    Shameless
-                                                                        
-                                </div>
-                            </a>
-                            <div class="swiper-slide">
-                                <a href>
-                                    <img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">
-                                        Shameless
-                                                                                
-                                    </div>
-                                </a>
-                                <div class="swiper-slide">
-                                    <a href>
-                                        <img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">
-                                            Shameless
-                                                                                        
-                                        </div>
-                                    </a>
-                                </div>
-
+                        <a href><img class="img-fluid" src="/uploads/{{ serie.image }}" alt="">{{ serie.title }}</a>
+					</div>
                                 <div class="swiper-button-next"></div>
                                 <div class="swiper-button-prev"></div>
-                                <div class="swiper-pagination">
-                                    titre
-                                                                        
-                                </div>
-                            {% endfor %}
+                                <div class="swiper-pagination"></div>
+                                   
+                                
+							{% endfor %} 
                         </section>
                     {% endfor %}
 
@@ -72,13 +35,13 @@ slidesPerView: 3,
 centerMode: true,
 centerPadding: '20px',
 spaceBetween: 30,
-autoplay: {
-delay: 2500,
-disableOnInteraction: false
-},
 navigation: {
 nextEl: ".swiper-button-next",
 prevEl: ".swiper-button-prev",
+},
+autoplay: {
+delay: 2500,
+disableOnInteraction: false
 },
 breakpoints: {
 320: {
