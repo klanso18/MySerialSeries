@@ -14,14 +14,15 @@
 			<div class="swiper-wrapper">
 			{% for serie in series|filter(serie => category.id == serie.category_id) %}
                     <div class="swiper-slide">
-                        <a href><img class="img-fluid" src="/uploads/{{ serie.image }}" alt="">{{ serie.title }}</a>
+                        <a href><img class="img-fluid" src="/uploads/{{ category.title }}/{{ serie.image }}" alt="">{{ serie.title }}</a>
 					</div>
-                                <div class="swiper-button-next"></div>
-                                <div class="swiper-button-prev"></div>
-                                <div class="swiper-pagination"></div>
+                                
                                    
                                 
 							{% endfor %} 
+                        <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
                         </section>
                     {% endfor %}
 
