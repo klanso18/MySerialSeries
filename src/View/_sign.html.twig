@@ -4,13 +4,13 @@
 	<div class="modal-dialog">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h7 class="modal-title" id="loginModal">
-					<ul class="nav nav-pills">
+				<h6 class="modal-title">
+					<ul class="nav nav-tabs">
 						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="/register">Register</a>
+							<a class="nav-link active" data-bs-toggle="modal" data-bs-target="#registerModal" href="/register">Register</a>
 						</li>
 					</ul>
-				</h7>
+				</h6>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
 
@@ -30,17 +30,17 @@
 						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 						<button type="button" class="btn btn-primary">Connect</button>
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
-	</form>
-
-	<!-- MODAL REGISTER -->
+	</div>
+</div>
+<!-- MODAL REGISTER -->
 	<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModal" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="registerModal">Register</h5>
+					<h5 class="modal-title">Register</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 				<div class="modal-body">
@@ -67,14 +67,11 @@
 							<label for="lastname" class="form-label">Lastname</label>
 							<input class="form-control" type="text" id="lastname" name="lastname" required>
 						</div>
-						<div class="mb-3">
-							<button type="submit" class="btn btn-success">Create account</button>
-						</div>
 					</form>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="button" class="btn btn-primary">Save changes</button>
+					<button type="submit" class="btn btn-success">Create account</button>
 				</div>
 			</div>
 		</div>
