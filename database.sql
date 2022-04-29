@@ -36,9 +36,9 @@ CREATE TABLE `category` (
 LOCK TABLES `category` WRITE;
 /*!40000 ALTER TABLE `category` DISABLE KEYS */;
 INSERT INTO `category` VALUES 
-(1, 'Japanese Animation'),
+(1, 'Comedy'),
 (2, 'Horror'),
-(3, 'Comedy'),
+(3, 'Japanese Animation'),
 (4, 'Thriller');
 
 /*!40000 ALTER TABLE `category` ENABLE KEYS */;
@@ -71,20 +71,20 @@ CREATE TABLE `serie` (
 LOCK TABLES `serie` WRITE;
 /*!40000 ALTER TABLE `serie` DISABLE KEYS */;
 INSERT INTO `serie` VALUES 
-(1, 'Jijutsu kaizen0', 1, 'Jijutsu_kaizen0.jpg', 'Desc',1),
-(2, 'Jijutsu kaizen', 2, 'Jijutsu_kaizen.jpg', 'Desc',1),
-(3, 'Demon Slayers', 3, 'Demonslayer1.jpg', 'Desc',1),
-(4, 'One Piece', 4, 'onepieceS1.jpg', 'Desc',1),
-(5, 'Attack on Titans', 5, 'attack_on_titans.jpg', 'Desc',1),
+(1, 'Jijutsu kaizen0', 1, 'Jijutsu_kaizen0.jpg', 'Desc',3),
+(2, 'Jijutsu kaizen', 2, 'Jijutsu_kaizen.jpg', 'Desc',3),
+(3, 'Demon Slayers', 3, 'Demonslayer1.jpg', 'Desc',3),
+(4, 'One Piece', 4, 'onepieceS1.jpg', 'Desc',3),
+(5, 'Attack on Titans', 5, 'attack_on_titans.jpg', 'Desc',3),
 (6, 'The walking dead', 6, 'walkingdead.jpeg', 'Desc',2),
 (7, 'Dark', 7, 'dark.jpeg', 'Desc',2),
 (8, 'Game of Thrones', 8, 'goat.jpeg', 'Desc',2),
 (9, 'Stranger Things', 9, 'strangerThings.jpeg', 'Desc',2),
-(10, 'Rick and Morty', 10, 'rick_morty.jpg', 'Desc',3),
-(11, 'Sex Education', 11, 'sex_education.jpg', 'Desc',3),
-(12, 'Shameless', 12, 'shameless.jpg', 'Desc',3),
-(13, 'Peacemaker', 13, 'peacemakerS1.jpg', 'Desc',3),
-(14, 'Upload', 14, 'upload.jpg', 'Desc',3),
+(10, 'Rick and Morty', 10, 'rick_morty.jpg', 'Desc',1),
+(11, 'Sex Education', 11, 'sex_education.jpg', 'Desc',1),
+(12, 'Shameless', 12, 'shameless.jpg', 'Desc',1),
+(13, 'Peacemaker', 13, 'peacemakerS1.jpg', 'Desc',1),
+(14, 'Upload', 14, 'upload.jpg', 'Desc',1),
 (15, 'Breaking Bad', 15, 'breakingbad.jpg', 'Desc',4),
 (16, 'Dexter', 16, 'dexter.jpeg', 'Desc',4),
 (17, 'Ozark', 17, 'ozark.jpeg', 'Desc',4),
