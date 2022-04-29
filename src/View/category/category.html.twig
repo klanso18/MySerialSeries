@@ -1,50 +1,42 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-	<!--SLIDE-->
-	{% for j in 1..4 %}
-		<section class="swiper mySwiper mb-5 mx-5">
-			<h2 class="mb-5">
-				Comedy
-			</h2>
+    <h1 class="text-center mt-5">
+        Category 
+    </h1>
+    <!-- Swiper -->
+    {# <h2>Comedy</h2> #}
+    {% for category in categories %}
+        <section class="swiper mySwiper mb-5 mx-5">
+            <h2 class="mb-5">
+                {{ category.title }}
+            </h2>	
 			<div class="swiper-wrapper">
-				<div class="swiper-slide">
-					<a href><img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">Shameless</div>
-				</a>
-				<div class="swiper-slide">
-					<a href><img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">Shameless</div>
-				</a>
-				<div class="swiper-slide">
-					<a href><img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">Shameless</div>
-				</a>
-				<div class="swiper-slide">
-					<a href><img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">Shameless</div>
-				</a>
-				<div class="swiper-slide">
-					<a href><img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">Shameless</div>
-				</a>
-			</div>
+			{% for serie in series|filter(serie => category.id == serie.category_id) %}
+                    <div class="swiper-slide">
+                        <a href><img class="img-fluid" src="/uploads/{{ category.title }}/{{ serie.image }}" alt="">{{ serie.title }}</a>
+					</div>
+                                
+                                   
+                                
+							{% endfor %} 
+                        <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>
+                        </section>
+                    {% endfor %}
 
-			<div class="swiper-button-next"></div>
-			<div class="swiper-button-prev"></div>
-			<div class="swiper-pagination"></div>
-		</section>
-	{% endfor %}
 
-	<!-- Swiper JS -->
-	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                    <!-- Swiper JS -->
+                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-	<!-- Initialize Swiper -->
-	<script>
+                    <!-- Initialize Swiper -->
+                    <script>
 		var swiper = new Swiper(".mySwiper", {
 slidesPerView: 3,
 centerMode: true,
 centerPadding: '20px',
 spaceBetween: 30,
-autoplay: {
-delay: 2500,
-disableOnInteraction: false
-},
 navigation: {
 nextEl: ".swiper-button-next",
 prevEl: ".swiper-button-prev"
@@ -73,4 +65,5 @@ spaceBetween: 50
 }
 });
 	</script>
-{% endblock %}
+
+                {% endblock %}
