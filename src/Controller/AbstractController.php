@@ -25,5 +25,6 @@ abstract class AbstractController
             ]
         );
         $this->twig->addExtension(new DebugExtension());
+        $this->twig->addGlobal('currentRoute', trim($_SERVER['REQUEST_URI']));
     }
 }
