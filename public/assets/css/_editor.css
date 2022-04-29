@@ -27,4 +27,19 @@ form > .mb-3 {
     color: rgb(var(--bs-secondary-rgb));
 }
 
+.col-form-label {
+    font-size: 1.1rem;
+}
+
+.form-control:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0.2rem 0.1rem rgb(var(--bs-secondary-rgb));
+} 
+
+.form-select:focus {
+    border-color: #000000;
+    box-shadow: 0 0 0.2rem 0.1rem rgb(var(--bs-secondary-rgb));
+} 
+
+
 
