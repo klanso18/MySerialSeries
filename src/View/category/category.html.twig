@@ -1,19 +1,14 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-	<h1 class="text-center mt-5">
-		Category
-	</h1>
-
-	<!-- Swiper -->
-	{# <h2>Comedy</h2> #}
+	<!--SLIDE-->
 	{% for j in 1..4 %}
 		<section class="swiper mySwiper mb-5 mx-5">
 			<h2 class="mb-5">
 				Comedy
 			</h2>
 			<div class="swiper-wrapper">
-				<div class="swiper-slide" style="max: width 540px;">
+				<div class="swiper-slide">
 					<a href><img class="img-fluid" src="https://fakeimg.pl/850x1000/?text=Shameless" alt="">Shameless</div>
 				</a>
 				<div class="swiper-slide">
@@ -32,7 +27,7 @@
 
 			<div class="swiper-button-next"></div>
 			<div class="swiper-button-prev"></div>
-	 		<div class="swiper-pagination">titre</div>
+			<div class="swiper-pagination"></div>
 		</section>
 	{% endfor %}
 
@@ -52,7 +47,7 @@ disableOnInteraction: false
 },
 navigation: {
 nextEl: ".swiper-button-next",
-prevEl: ".swiper-button-prev",
+prevEl: ".swiper-button-prev"
 },
 breakpoints: {
 320: {
@@ -79,13 +74,3 @@ spaceBetween: 50
 });
 	</script>
 {% endblock %}
-
-{# pagination: {
-el: ".swiper-pagination",
-type: "fraction"
-}, #}
-
-{# autoplay: {
-delay: 2500,
-disableOnInteraction: false
-}, #}
