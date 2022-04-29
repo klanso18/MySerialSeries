@@ -1,3 +1,25 @@
-.form {
-    background-color: var(--bs-success-rgb);
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #ECD500;
+    background-color: #303D5D;
 }
+
+.btn-primary {
+    color: #ECD500;
+    background-color: #303D5D;
+    border-color: #303D5D;
+}
+
+.btn-secondary {
+    color: #303D5D;
+    background-color: #EEEEEE;
+    border-color: #EEEEEE;
+}
+
+/*CREATE AN ACCOUNT*/ 
+.btn-success {
+    color: #ECD500;
+    background-color: #303d5d;
+    border-color: #303d5d;
+}
+
