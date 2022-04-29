@@ -1,0 +1,83 @@
+<!--MODAL LOGIN-->
+
+<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h6 class="modal-title">
+					<ul class="nav nav-tabs">
+						<li class="nav-item">
+							<a class="nav-link active" data-bs-toggle="modal" data-bs-target="#registerModal" href="/register">Register</a>
+						</li>
+					</ul>
+				</h6>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+
+			<div class="modal-body">
+				<p>Enter credentials below to be connected.</p>
+				<form action="/login" method="post">
+					<div class="mb-3">
+						<label for="email" class="form-label">Email</label>
+						<input type="email" class="form-control" id="email" name="email">
+					</div>
+					<div class="mb-3">
+						<label for="password" class="form-label">Password</label>
+						<input type="password" class="form-control" id="password" name="password">
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary">Connect</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- MODAL REGISTER -->
+<div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModal" aria-hidden="true">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"></h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<h1>Register an account</h1>
+				<p>Please fill the form below to create an account.</p>
+				<form action="/register" method="post">
+
+					<div class="mb-3">
+						<label for="pseudo" class="form-label">Pseudo</label>
+						<input class="form-control" type="text" id="pseudo" name="pseudo" required>
+					</div>
+
+					<div class="mb-3">
+						<label for="firstname" class="form-label">Firstname</label>
+						<input class="form-control" type="text" id="firstname" name="firstname" required>
+					</div>
+
+					<div class="mb-3">
+						<label for="lastname" class="form-label">Lastname</label>
+						<input class="form-control" type="text" id="lastname" name="lastname" required>
+					</div>
+
+					<div class="mb-3">
+						<label for="email" class="form-label">Email</label>
+						<input class="form-control" type="email" id="email" name="email" required>
+					</div>
+					<div class="mb-3">
+						<label for="password" class="form-label">Password</label>
+						<input class="form-control" type="password" id="password" name="password" required>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-success">Create account</button>
+			</div>
+		</div>
+	</div>
+</div>
