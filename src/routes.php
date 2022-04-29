@@ -10,13 +10,10 @@ return [
     '' => ['HomeController', 'index',],
     'category' => ['CategoryController', 'index',],
     'serie' => ['SerieController', 'index',],
-<<<<<<< HEAD
     'login' => ['UserController', 'login',],
     'logout' => ['UserController', 'logout',],
     'register' => ['UserController', 'register',],
-=======
     'serie/add' => ['SerieController', 'add',],
->>>>>>> 14f3ad1adf7a57c5a92c0531105216a693a4c8b1
     'items' => ['ItemController', 'index',],
     'items/edit' => ['ItemController', 'edit', ['id']],
     'items/show' => ['ItemController', 'show', ['id']],

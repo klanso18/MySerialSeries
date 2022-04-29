@@ -18,8 +18,7 @@
 } */
 
 .navbar-brand,
-.nav-link,
-.nav-link:focus {
+.nav-link {
     color: inherit;
     color: var(--foreground-primary);
 }
@@ -72,4 +71,11 @@
     max-width: 25px;
     max-height: 25px;
     margin-top: 0.3rem;
+}
+
+.nav-link:hover,
+.nav-link:focus,
+.nav-link.active {
+    font-style: oblique;
+    color: var(--bs-secondary);
 }
