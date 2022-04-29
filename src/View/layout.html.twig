@@ -20,9 +20,10 @@
 		
     <body class="d-flex flex-column h-100">
     {% include "_navbar.html.twig" %}
-    
-    <main class="container mt-4">
-    {% block content %}{% endblock %}
+
+    <main class="container mt-auto">
+        {% block content %}
+        {% endblock %}
     </main>
     
     {% include "_footer.html.twig" %}
