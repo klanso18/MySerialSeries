@@ -2,13 +2,18 @@
 
 namespace App\Controller;
 
+use App\Model\CategoryManager;
 use App\Model\SerieManager;
 
 class SerieController extends AbstractController
 {
     public function index(): string
     {
-        return $this->twig->render('Serie/index.html.twig');
+        $categoryManager = new CategoryManager();
+        $categories = $categoryManager->selectDistinctAll();
+        return $this->twig->render('Serie/index.html.twig', [
+            'categories' => $categories
+        ]);
     }
 
     public function add(): ?string
@@ -22,10 +27,14 @@ class SerieController extends AbstractController
                 $serieManager = new SerieManager();
                 $serie['image'] = $fileName;
                 $id = $serieManager->insert($serie);
-                header('Location:/serie?id=' . $id);
+                header('Location:/category?id=' . $id);
                 return null;
             }
         }
-        return $this->twig->render('Serie/add.html.twig');
+        $categoryManager = new CategoryManager();
+
+        return $this->twig->render('Serie/add.html.twig', [
+            'categories' => $categoryManager->selectAll(),
+        ]);
     }
 }
