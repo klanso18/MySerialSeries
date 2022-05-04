@@ -8,7 +8,7 @@ class CategoryManager extends AbstractManager
 
     public function selectDistinctAll(string $orderBy = '', string $direction = 'ASC'): array
     {
-        $query = 'SELECT DISTINCT c.id, c.name FROM ' . static::TABLE
+        $query = 'SELECT DISTINCT c.id, c.title FROM ' . static::TABLE
         . ' AS c JOIN ' . SerieManager::TABLE . ' AS i ON i.category_id=c.id ';
         if ($orderBy) {
             $query .= ' ORDER BY ' . $orderBy . ' ' . $direction;
