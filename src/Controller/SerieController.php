@@ -2,14 +2,34 @@
 
 namespace App\Controller;
 
+use App\Model\CategoryManager;
 use App\Model\SerieManager;
 
 class SerieController extends AbstractController
 {
     public function index(): string
     {
-        return $this->twig->render('Serie/index.html.twig');
+        $categoryManager = new CategoryManager();
+        $categories = $categoryManager->selectDistinctAll();
+        $serieManager = new SerieManager();
+        $series = $serieManager->selectAll();
+        return $this->twig->render('Serie/index.html.twig', [
+            'categories' => $categories,
+            'series' => $series
+        ]);
     }
+
+    /**
+     * Show informations for a specific item
+     */
+    // public function show(int $id): string
+    // {
+    //     $serieManager = new SerieManager();
+    //     $serie = $serieManager->selectOneById($id);
+
+    //     return $this->twig->render('Serie/index.html.twig', ['serie' => $serie]);
+    // }
+
 
     public function add(): ?string
     {
@@ -21,11 +41,14 @@ class SerieController extends AbstractController
             if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
                 $serieManager = new SerieManager();
                 $serie['image'] = $fileName;
-                $id = $serieManager->insert($serie);
-                header('Location:/serie?id=' . $id);
+                $serieManager->insert($serie);
+                header('Location:/category');
                 return null;
             }
         }
-        return $this->twig->render('Serie/add.html.twig');
+        $categoryManager = new CategoryManager();
+        return $this->twig->render('Serie/add.html.twig', [
+            'categories' => $categoryManager->selectAll()
+        ]);
     }
 }

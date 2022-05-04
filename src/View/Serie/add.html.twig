@@ -1,63 +1,7 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-<section class="editor">
-    <h1>Serial Editor</h1>
-    <h2>Add, modify, delete...</h2>
-    <form action="" method="post" enctype="multipart/form-data">
-        <div class="row mb-3">
-            <label for="category" class="col-sm-2 col-form-label">Category</label>
-            <div class="col-sm-10">
-                <select class="form-select" aria-label="Default select example">
-                    <option selected>Select a category</option>
-                    <option value="1">Thriller</option>
-                    <option value="2">Horor</option>
-                    <option value="3">Comedy</option>
-                    <option value="4">Japanese animation</option>
-                </select>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="title" class="col-sm-2 col-form-label">Title</label>
-            <div class="col-sm-10">
-                <input type="title" class="form-control" id="title" aria-describedby="titleHelp">
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="synopsis" class="col-sm-2 col-form-label">Synopsis</label>
-            <div class="col-sm-10">
-                <textarea class="form-control ckeditor" id="synopsis"></textarea>
-            </div>
-        </div>
-        <div class="row mb-3">
-            <label for="formFile" class="col-sm-2 col-form-label">Picture</label>
-            <div class="col-sm-10">
-                <div class="input-group mb-3">
-                    <input type="file" class="form-control" id="inputGroupFile02">
-                    <label class="input-group-text" for="inputGroupFile02">Upload</label>
-                </div>
-            </div>
-        </div>
-        <div class="submit">
-            <button type="submit" class="btn btn-dark">Save</button>
-        </div>
-    </form>
-</section>
 
-<script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
-<script>
-    const editors = document.querySelectorAll('.ckeditor');
-    editors.forEach(function(editor) {
-        ClassicEditor.create(editor, {
-                mediaEmbed: {
-                previewsInData: true
-            }
-            }).then(editor => {
-                console.log(editor);
-            }).catch(error => {
-                console.error(error);
-            });
-    });
-
-</script>
+    {% include 'Serie/_form.html.twig' %}
+    
 {% endblock %}
