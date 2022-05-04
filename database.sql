@@ -77,7 +77,7 @@ INSERT INTO `serie` VALUES
 She is no longer the little girl he knew and manifests herself as a monstrous entity that protects him against his will.
 After yet another accident caused by this scourge, Yuta is picked up by Satoru Gojo, a teacher at the Tokyo School of Exorcism, who convinces him to join the school to master his occult energy.
 Will he be able to learn enough in time to face the curse that haunts him?</p>
-Source :<a href=\https://androidgadget.org/le-film-jujutsu-kaisen-0-arrive-bientot-sur-crunchyroll\</a>",3),
+Source :<a href= \"https://androidgadget.org/le-film-jujutsu-kaisen-0-arrive-bientot-sur-crunchyroll\">https://androidgadget.org/le-film-jujutsu-kaisen-0-arrive-bientot-sur-crunchyroll\</a>",3),
 (2, 'Jijutsu kaizen', 2, 'Jijutsu_kaizen.jpg', "<p><strong>16+,1 Season, 1 Movie, Japan.</p></strong>
 <p><strong>Genres : Anime Series, International TV Shows</strong></p>
 <p>A boy fights... for the right death.
@@ -86,7 +86,7 @@ The curses run rampant throughout the world, capable of leading people to terrib
 What's more, the curses can only be exorcised by another curse.
 Itadori Yuuji is a boy with tremendous physical strength, though he lives a completely ordinary high school life. One day, to save a classmate who has been attacked by curses, he eats the finger of Ryomen Sukuna, taking the curse into his own soul. 
 From then on, he shares one body with Ryomen Sukuna. Guided by the most powerful of sorcerers, Gojou Satoru, Itadori is admitted to the Tokyo Metropolitan Jujutsu Technical High School, an organization that fights the curses... and thus begins the heroic tale of a boy who became a curse to exorcise a curse, a life from which he could never turn back.</p>
-Source: https://www.crunchyroll.com/jujutsu-kaisen/episode-1-ryomen-sukuna-797865",3),
+Source:<a href= \"https://www.crunchyroll.com/jujutsu-kaisen/episode-1-ryomen-sukuna-797865\">https://www.crunchyroll.com/jujutsu-kaisen/episode-1-ryomen-sukuna-797865</a>",3),
 (3, 'Demon Slayers', 3, 'Demonslayer1.jpg', "<p><strong>16+, 2 Seasons, 1 Movie, Japan.</strong></p>
 <p><strong>Genres : Anime Series, International TV Shows</p></strong>
 <p>After a demon attack leaves his family slain and his sister cursed, Tanjiro embarks upon a perilous journey to find a cure and avenge those he's lost.</p>
@@ -96,11 +96,11 @@ Source :  Demon Slayer: Kimetsu no Yaiba",3),
 <p>One Piece is a Japanese animated series about the adventures of Luffy, who dreams of becoming king of the pirates. 
 A true rubber man, thanks to a Demon Fruit, Luffy sets out in search of the One Piece, the treasure that will make him king of the pirates. To hope to realize his dream, Luffy must take the road to Grand Line, also known as the Pirate Graveyard. So he sets out to recruit a crew worthy of the task. 
 One Piece is adapted from the manga created by Eiichiro Oda.</p>
-Source : https://www.crunchyroll.com/fr/one-piece/episode-1-im-luffy-the-man-whos-gonna-be-king-of-the-pirates-650673",3),
+Source :<a href= \"https://www.crunchyroll.com/fr/one-piece/episode-1-im-luffy-the-man-whos-gonna-be-king-of-the-pirates-650673\">https://www.crunchyroll.com/fr/one-piece/episode-1-im-luffy-the-man-whos-gonna-be-king-of-the-pirates-650673</a>",3),
 (5, 'Attack on Titans', 5, 'attack_on_titans.jpg', "<p><strong>16+, 4 Seasons, Japan.</strong></p>
 <p><strong>Genres : Anime Series, International TV Shows</strong></p>
 <p>With his hometown in ruins, young Eren Yeager becomes determined to fight back against the giant Titans that threaten to destroy the human race.</p>
-Source : https://www.crunchyroll.com/fr/attack-on-titan",3),
+Source :<a href= \" https://www.crunchyroll.com/fr/attack-on-titan\">https://www.crunchyroll.com/fr/attack-on-titan\</a>",3),
 (6, 'The walking dead', 6, 'walkingdead.jpeg', "<p><strong>18+, 11 seasons, United-States</strong></p> 
 <p>Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies.
 He sets out to find his family and encounters many other survivors along the way.</p>
@@ -128,14 +128,23 @@ Sources:<a href= \"https://www.netflix.com/fr/title/80014749\">https://www.netfl
 (11, 'Sex Education', 11, 'sex_education.jpg', "<p><strong>16+, 2019, 3 saisons, United States.</strong></p>
 <p>The shy Otis knows everything about sex... thanks to his therapist mom. The rebel Maeve decides him to open an underground consulting firm in high school.</p>
 <p>Starring: Asa Butterfield, Gillian Anderson, Ncuti Gatwa<p>
-Source: https://www.netflix.com/fr/title/80197526",1),
+Source:<a href= \"https://www.netflix.com/fr/title/80197526\">https://www.netflix.com/fr/title/80197526</a>",1),
 (12, 'Shameless', 12, 'shameless.jpg', "<p><strong>18 +, 2013, 11 saisons, United States.</strong></p> 
 <p>Meet Frank Gallagher (series star WILLIAM H. MACY): proud, working-class patriarch to a motley brood of six smart, spirited and independent kids who, without him, would be... better off. 
 The Gallaghers are irreverent, endearing, resilient — and they're absolutely, wildly and unapologetically SHAMELESS.</p>
 <p>Starring:	Emmy Rossum, Jeremy Allen White, Ethan Cutkosky</p>
-Sources: https://www.primevideo.com/detail/0K1UM6K115ZWVEVV6LMBC8WVAC/ref=atv_dp_season_select_s1",1),
-(13, 'Peacemaker', 13, 'peacemakerS1.jpg', 'Desc',1),
-(14, 'Upload', 14, 'upload.jpg', 'Desc',1),
+Sources:<a href= \"https://www.primevideo.com/detail/0K1UM6K115ZWVEVV6LMBC8WVAC/ref=atv_dp_season_select_s1\">https://www.primevideo.com/detail/0K1UM6K115ZWVEVV6LMBC8WVAC/ref=atv_dp_season_select_s1\</a>",1),
+(13, 'Peacemaker', 13, 'peacemakerS1.jpg', "<p><strong>2022, 1 saison, United States.</strong></p>
+<p>Left for dead after his confrontation with Bloodsport during their mission on the island of Corto Maltese with Task Force X, Christopher Smith, aka the Peacemaker, actually survived. 
+He is found by Amanda Waller's team in order to entrust him with new missions.</p>
+<p>Starring: John Cena, Danielle Brooks, Freddie Stroma, Chukwudi Iwuji, Jennifer Holland, Steve Agee, Robert Patrick, Annie Chang, Lochlyn Munro, Elizabeth Faith Ludlow, Rizwan Manji</p>
+Sources:<a href= \"https://www.cineserie.com/series/4434842\">https://www.cineserie.com/series/4434842\</a>",1),
+(14, 'Upload', 14, 'upload.jpg', "<p><strong>18+, 2020, 2 saisons, United States.</strong></p>
+<p>From the Emmy-winning Greg Daniels (The Office, Parks & Rec) comes a hilarious new sci-fi comedy. 
+In the future people can upload their consciousness to a luxurious digital afterlife. 
+When party boy Nathan gets uploaded to a virtual resort he meets the down-to-earth Nora who starts as his customer service “angel”, but becomes so much more as she helps him find friendship, love and purpose</p>
+<p>Starring: Robbie Amell, Andy Allo, Allegra Edwards</p>
+Source:<a href= \"https://www.primevideo.com\">https://www.primevideo.com\</a>",1),
 (15, 'Breaking Bad', 15, 'breakingbad.jpg', "<p><strong>18+, 5 seasons, United States.</strong></p>  
 <p>When Walter White, a New Mexico chemistry teacher, is diagnosed with Stage III cancer and given a prognosis of only two years left to live. 
 He becomes filled with a sense of fearlessness and an unrelenting desire to secure his family's financial future at any cost as he enters the dangerous world of drugs and crime.</p>
