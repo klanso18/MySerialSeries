@@ -2,7 +2,8 @@
 
 {% block content %}
     <h1 class="text-center mt-5">
-        Category 
+        Category        
+            
     </h1>
     <!-- Swiper -->
     {# <h2>Comedy</h2> #}
@@ -10,28 +11,30 @@
         <section class="swiper mySwiper mb-5 mx-5">
             <h2 class="mb-5">
                 {{ category.title }}
-            </h2>	
-			<div class="swiper-wrapper">
-			{% for serie in series|filter(serie => category.id == serie.category_id) %}
-                    <div class="swiper-slide">
-                        <a href><img class="img-fluid" src="/uploads/{{ serie.image }}" alt="">{{ serie.serieTitle }}</a>
-					</div>
-                                
-                                   
-                                
-							{% endfor %} 
-                        <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                        </section>
-                    {% endfor %}
+            </h2>
+            <div class="swiper-wrapper">
+                {% for serie in series|filter(serie => category.id == serie.category_id) %}
+                    <div class="swiper-slide d-flex flex-column position-relative">
+                        <img class="img-fluid" src="/uploads/{{ serie.image }}" alt="">
+                        <a class="stretched-link" href="/serie/show?id={{ serie.id }}">
+                            {{ serie.serieTitle }}
+                        </a>
 
+                    </div>
 
-                    <!-- Swiper JS -->
-                    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+                {% endfor %}
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+    {% endfor %}
 
-                    <!-- Initialize Swiper -->
-                    <script>
+            <!-- Swiper JS -->
+            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+            <!-- Initialize Swiper -->
+            <script>
 		var swiper = new Swiper(".mySwiper", {
 slidesPerView: 3,
 centerMode: true,
@@ -66,4 +69,5 @@ spaceBetween: 50
 });
 	</script>
 
-                {% endblock %}
+        {% endblock %}
+        
