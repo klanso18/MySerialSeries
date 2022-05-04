@@ -28,4 +28,14 @@ class SerieController extends AbstractController
         }
         return $this->twig->render('Serie/add.html.twig');
     }
+     /**
+     * Show informations for a specific item
+     */
+    public function show(int $id): string
+    {
+        $serieManager = new SerieManager();
+        $serie = $serieManager->selectOneById($id);
+
+        return $this->twig->render('Serie/index.html.twig', ['serie' => $serie]);
+    }
 }

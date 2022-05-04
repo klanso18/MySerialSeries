@@ -10,6 +10,8 @@ return [
     '' => ['HomeController', 'index',],
     'category' => ['CategoryController', 'index',],
     'serie' => ['SerieController', 'index',],
+    'serie/show' => ['SerieController', 'show', ['id']],
+    'serie/edit' => ['SerieController', 'edit', ['id']],
     'login' => ['UserController', 'login',],
     'logout' => ['UserController', 'logout',],
     'register' => ['UserController', 'register',],
