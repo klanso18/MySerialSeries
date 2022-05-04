@@ -71,11 +71,36 @@ CREATE TABLE `serie` (
 LOCK TABLES `serie` WRITE;
 /*!40000 ALTER TABLE `serie` DISABLE KEYS */;
 INSERT INTO `serie` VALUES 
-(1, 'Jijutsu kaizen0', 1, 'Jijutsu_kaizen0.jpg', 'Desc',3),
-(2, 'Jijutsu kaizen', 2, 'Jijutsu_kaizen.jpg', 'Desc',3),
-(3, 'Demon Slayers', 3, 'Demonslayer1.jpg', 'Desc',3),
-(4, 'One Piece', 4, 'onepieceS1.jpg', 'Desc',3),
-(5, 'Attack on Titans', 5, 'attack_on_titans.jpg', 'Desc',3),
+(1, 'Jijutsu kaizen0', 1, 'Jijutsu_kaizen0.jpg', "<p><strong>16+,1 Season, 1 Movie, Japan.</p></strong>
+<p><strong>Genres : Anime Series, International TV Shows</strong></p>
+<p>Yuta Okkotsu is haunted by the spirit of Rika, his childhood friend who died in a car accident. 
+She is no longer the little girl he knew and manifests herself as a monstrous entity that protects him against his will.
+After yet another accident caused by this scourge, Yuta is picked up by Satoru Gojo, a teacher at the Tokyo School of Exorcism, who convinces him to join the school to master his occult energy.
+Will he be able to learn enough in time to face the curse that haunts him?</p>
+Source :<a href=\https://androidgadget.org/le-film-jujutsu-kaisen-0-arrive-bientot-sur-crunchyroll\</a>",3),
+(2, 'Jijutsu kaizen', 2, 'Jijutsu_kaizen.jpg', "<p><strong>16+,1 Season, 1 Movie, Japan.</p></strong>
+<p><strong>Genres : Anime Series, International TV Shows</strong></p>
+<p>A boy fights... for the right death.
+Hardship, regret, shame: the negative feelings that humans feel become curses that lurk in our everyday lives. 
+The curses run rampant throughout the world, capable of leading people to terrible misfortune and even death. 
+What's more, the curses can only be exorcised by another curse.
+Itadori Yuuji is a boy with tremendous physical strength, though he lives a completely ordinary high school life. One day, to save a classmate who has been attacked by curses, he eats the finger of Ryomen Sukuna, taking the curse into his own soul. 
+From then on, he shares one body with Ryomen Sukuna. Guided by the most powerful of sorcerers, Gojou Satoru, Itadori is admitted to the Tokyo Metropolitan Jujutsu Technical High School, an organization that fights the curses... and thus begins the heroic tale of a boy who became a curse to exorcise a curse, a life from which he could never turn back.</p>
+Source: https://www.crunchyroll.com/jujutsu-kaisen/episode-1-ryomen-sukuna-797865",3),
+(3, 'Demon Slayers', 3, 'Demonslayer1.jpg', "<p><strong>16+, 2 Seasons, 1 Movie, Japan.</strong></p>
+<p><strong>Genres : Anime Series, International TV Shows</p></strong>
+<p>After a demon attack leaves his family slain and his sister cursed, Tanjiro embarks upon a perilous journey to find a cure and avenge those he's lost.</p>
+Source :  Demon Slayer: Kimetsu no Yaiba",3),
+(4, 'One Piece', 4, 'onepieceS1.jpg', "<p><strong>14+, 20 Seasons, 15 Movies, Japan.</strong></p>
+<p><strong>Genres : Anime Series, International TV Shows</strong></p>
+<p>One Piece is a Japanese animated series about the adventures of Luffy, who dreams of becoming king of the pirates. 
+A true rubber man, thanks to a Demon Fruit, Luffy sets out in search of the One Piece, the treasure that will make him king of the pirates. To hope to realize his dream, Luffy must take the road to Grand Line, also known as the Pirate Graveyard. So he sets out to recruit a crew worthy of the task. 
+One Piece is adapted from the manga created by Eiichiro Oda.</p>
+Source : https://www.crunchyroll.com/fr/one-piece/episode-1-im-luffy-the-man-whos-gonna-be-king-of-the-pirates-650673",3),
+(5, 'Attack on Titans', 5, 'attack_on_titans.jpg', "<p><strong>16+, 4 Seasons, Japan.</strong></p>
+<p><strong>Genres : Anime Series, International TV Shows</strong></p>
+<p>With his hometown in ruins, young Eren Yeager becomes determined to fight back against the giant Titans that threaten to destroy the human race.</p>
+Source : https://www.crunchyroll.com/fr/attack-on-titan",3),
 (6, 'The walking dead', 6, 'walkingdead.jpeg', "<p><strong>18+, 11 seasons, United-States</strong></p> 
 <p>Sheriff's deputy Rick Grimes awakens from a coma to find a post-apocalyptic world dominated by flesh-eating zombies.
 He sets out to find his family and encounters many other survivors along the way.</p>
@@ -86,19 +111,29 @@ He sets out to find his family and encounters many other survivors along the way
 What they could not imagine is that this mystery would be connected to innumerable other secrets of the small town.</p>
 <p>Cast : Louis Hofmann, Oliver Masucci, Jördis Triebel, Maja Schöne, Karoline Eichhorn, Sebastian Rudolph, Anatole Taubman, Mark Waschke, Stephan Kampwirth, Anne Ratte-Polle, Andreas Pietschmann, Lisa Vicari, Michael Mendl, Angela Winkler</p>
 <br>source : reelgood.com flixable.com",2),
-(8, 'Game of Thrones', 8, 'goat.jpeg', "<p><strong>18+, 8 seasons, United-States.</strong></p> 
+(8, 'Game of Thrones', 8, 'goat.jpeg', "<p><strong>18+, 8 seasons, United States.</strong></p> 
 <p>Seven noble families fight for control of the mythical land of Westeros. 
 Friction between the houses leads to full-scale war. All while a very ancient evil awakens in the farthest north. 
 Amidst the war, a neglected military order of misfits, the Night's Watch, is all that stands between the realms of men and icy horrors beyond.</p>
 <p>Cast : Emilia Clarke, Kit Harington, Sophie Turner, Gwendoline Christie, Maisie Williams, Peter Dinkage, Lena Headey, Nikolaj Coster-Waldau, John Bradley-West, Iain Glen, Richard Madden, Alfie Allen, Jason Momoa, Liam Cunningham</p>
 <br>source : reelgood.com",2),
-(9, 'Stranger Things', 9, 'strangerThings.jpeg', "<p><strong>14+, 4 seasons, United-States.</strong></p> 
+(9, 'Stranger Things', 9, 'strangerThings.jpeg', "<p><strong>14+, 4 seasons, United States.</strong></p> 
 <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</p>
 <p>Cast : Winona Ryder, David Harbour, Finn Wolfhard, Millie Bobby Brown, Gaten Matarazzo, Caleb McLaughlin, Natalia Dyer, Charlie Heaton, Cara Buono, Noah Schnapp, Matthew Modine, Joe Keery, Dacre Montgomery, Sadie Sink, Paul Reiser, Sean Astin</p>
 <br>source : reelgood.com flixable.com",2),
-(10, 'Rick and Morty', 10, 'rick_morty.jpg', 'Desc',1),
-(11, 'Sex Education', 11, 'sex_education.jpg', 'Desc',1),
-(12, 'Shameless', 12, 'shameless.jpg', 'Desc',1),
+(10, 'Rick and Morty', 10, 'rick_morty.jpg', "<p><strong>16+, 2013, 5 saisons, United States.</strong></p>
+<p>Rick and Morty encounter a pawnshop in space, live in parallel universes, and come face to face with the devil.</p>
+<p>Starring: Justin Roiland,Chris Parnell,Spencer Grammer</p>
+Sources:<a href= \"https://www.netflix.com/fr/title/80014749\">https://www.netflix.com/fr/title/80014749</a>",1),
+(11, 'Sex Education', 11, 'sex_education.jpg', "<p><strong>16+, 2019, 3 saisons, United States.</strong></p>
+<p>The shy Otis knows everything about sex... thanks to his therapist mom. The rebel Maeve decides him to open an underground consulting firm in high school.</p>
+<p>Starring: Asa Butterfield, Gillian Anderson, Ncuti Gatwa<p>
+Source: https://www.netflix.com/fr/title/80197526",1),
+(12, 'Shameless', 12, 'shameless.jpg', "<p><strong>18 +, 2013, 11 saisons, United States.</strong></p> 
+<p>Meet Frank Gallagher (series star WILLIAM H. MACY): proud, working-class patriarch to a motley brood of six smart, spirited and independent kids who, without him, would be... better off. 
+The Gallaghers are irreverent, endearing, resilient — and they're absolutely, wildly and unapologetically SHAMELESS.</p>
+<p>Starring:	Emmy Rossum, Jeremy Allen White, Ethan Cutkosky</p>
+Sources: https://www.primevideo.com/detail/0K1UM6K115ZWVEVV6LMBC8WVAC/ref=atv_dp_season_select_s1",1),
 (13, 'Peacemaker', 13, 'peacemakerS1.jpg', 'Desc',1),
 (14, 'Upload', 14, 'upload.jpg', 'Desc',1),
 (15, 'Breaking Bad', 15, 'breakingbad.jpg', "<p><strong>18+, 5 seasons, United States.</strong></p>  

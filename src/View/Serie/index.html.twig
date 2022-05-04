@@ -34,10 +34,12 @@
                     <p>
                         {{ serie.description|raw }}
                     </p>
-                    <a class="btn btn-dark" href="/serie/edit?id={{ serie.id }}">
+
+                    <button type="button" class="btn btn-dark">
                         Edit
-                </a>
+                    </button>
+                </div>
             </div>
-        </div>
-    </section>
-{% endblock %}
+        </section>
+    {% endblock %}
+    

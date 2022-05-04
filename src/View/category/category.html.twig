@@ -3,6 +3,7 @@
 {% block content %}
     <h1 class="text-center mt-5">
         Category        
+            
     </h1>
     <!-- Swiper -->
     {# <h2>Comedy</h2> #}
@@ -13,18 +14,21 @@
             </h2>
             <div class="swiper-wrapper">
                 {% for serie in series|filter(serie => category.id == serie.category_id) %}
-                    <div class="swiper-slide">
-                        <img class="img-fluid" src="/uploads/{{ serie.image }} " alt="">
-                            <a class="stretched-link" href="/serie/show?id={{ serie.id }}"></a>
+                    <div class="swiper-slide d-flex flex-column position-relative">
+                        <img class="img-fluid" src="/uploads/{{ serie.image }}" alt="">
+                        <a class="stretched-link" href="/serie/show?id={{ serie.id }}">
+                            {{ serie.title }}
+                        </a>
 
                     </div>
 
-                    {% endfor %}
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
-                </section>
-            {% endfor %}
+                {% endfor %}
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+    {% endfor %}
 
             <!-- Swiper JS -->
             <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
