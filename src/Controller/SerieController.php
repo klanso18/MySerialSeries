@@ -51,4 +51,14 @@ class SerieController extends AbstractController
             'categories' => $categoryManager->selectAll()
         ]);
     }
+     /**
+     * Show informations for a specific item
+     */
+    public function show(int $id): string
+    {
+        $serieManager = new SerieManager();
+        $serie = $serieManager->selectOneById($id);
+
+        return $this->twig->render('Serie/index.html.twig', ['serie' => $serie]);
+    }
 }

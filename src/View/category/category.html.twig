@@ -1,29 +1,31 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-    <h1 class="text-center mt-5">
-        Category 
-    </h1>
     <!-- Swiper -->
     {# <h2>Comedy</h2> #}
+<section class="categories">
     {% for category in categories %}
         <section class="swiper mySwiper mb-5 mx-5">
             <h2 class="mb-5">
                 {{ category.title }}
-            </h2>	
-			<div class="swiper-wrapper">
+            </h2>
+            <div class="swiper-wrapper">
                 {% for serie in series|filter(serie => category.id == serie.category_id) %}
-                    <div class="swiper-slide">
-                        <a href><img class="img-fluid" src="/uploads/{{ serie.image }}" alt="">{{ serie.serieTitle }}</a>
-                    </div>               
+                    <div class="swiper-slide d-flex flex-column position-relative">
+                        <img class="img-fluid" src="/uploads/{{ serie.image }}" alt="">
+                        <a class="stretched-link" href="/serie/show?id={{ serie.id }}">
+                            {{ serie.serieTitle }}
+                        </a>
+                    </div>
                 {% endfor %} 
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+        
             </div>
+            <div class="swiper-button-next" style="color: white; text-shadow: 2px 2px 4px rgb(0 0 0 / 50%); font-weight: bold; padding-top: 3rem; padding-bottom: 3rem;"></div>
+            <div class="swiper-button-prev" style="color: white; text-shadow: 2px 2px 4px rgb(0 0 0 / 50%); font-weight: bold; padding-top: 3rem; padding-bottom: 3rem;"></div>
+            <div class="swiper-pagination"></div>
         </section>
     {% endfor %}
-
+</section>
 
 <!-- Swiper JS -->
 <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
