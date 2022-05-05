@@ -15,12 +15,15 @@
                             <select name="seen" id="seen">
                                 <option value="seen">
                                     Seen
+                                                                    
                                 </option>
                                 <option value="p-seen">
                                     Partially seen
+                                                                    
                                 </option>
                                 <option value="n-seen">
                                     Not seen
+                                                                    
                                 </option>
                             </select>
                         </form>
@@ -30,16 +33,16 @@
                 <div class="description">
                     <h2>
                         Synopsis
+                                            
                     </h2>
                     <p>
                         {{ serie.description|raw }}
                     </p>
-
-                    <button type="button" class="btn btn-dark">
-                        Edit
-                    </button>
+                
+                <div class="edit">
+                    <a href="/serie/edit?id={{ serie.id }}" class="btn btn-dark">Edit</a>
                 </div>
             </div>
-        </section>
-    {% endblock %}
-    
+        </div>
+    </section>
+{% endblock %}

@@ -36,14 +36,27 @@ class SerieManager extends AbstractManager
     }
 
     /**
-     * Update item in database
+     * Update serie in database
      */
-    // public function update(array $serie): bool
-    // {
-    //     $statement = $this->pdo->prepare("UPDATE " . self::TABLE . " SET `title` = :title WHERE id=:id");
-    //     $statement->bindValue('id', $serie['id'], \PDO::PARAM_INT);
-    //     $statement->bindValue('title', $serie['title'], \PDO::PARAM_STR);
+     public function update(array $serie): bool
+         {
+            $query = "UPDATE" . self::TABLE .
+            " SET `title`=:title,
+            `description`=:description, `category_id`=:category_id";
 
-    //     return $statement->execute();
-    // }
+            if (isset($serie['image'])) {
+                $query .= ", `image`=:image";
+            }
+            $query .= "WHERE `ìd`=:id";
+            $statement = $this->pdo->prepare($query);
+            $statement->bindValue('id', $serie['id'], \PDO::PARAM_INT);
+            $statement->bindValue('title', $serie['title'], \PDO::PARAM_STR);
+            $statement->bindValue('description', $serie['serie'], \PDO::PARAM_STR);
+            if (isset($serie['image'])) {
+                $statement->bindValue('image', $serie['image'], \PDO::PARAM_STR);
+            }
+            $statement->bindValue('category_id', $serie['category'], \PDO::PARAM_INT);
+
+            return $statement->execute();
+    }
 }
