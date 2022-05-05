@@ -1,12 +1,9 @@
 {% extends "layout.html.twig" %}
 
 {% block content %}
-    <h1 class="text-center mt-5">
-        Category        
-            
-    </h1>
     <!-- Swiper -->
     {# <h2>Comedy</h2> #}
+<section class="categories">
     {% for category in categories %}
         <section class="swiper mySwiper mb-5 mx-5">
             <h2 class="mb-5">
@@ -19,55 +16,54 @@
                         <a class="stretched-link" href="/serie/show?id={{ serie.id }}">
                             {{ serie.serieTitle }}
                         </a>
-
                     </div>
-
-                {% endfor %}
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
+                {% endfor %} 
+        
             </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </section>
     {% endfor %}
+</section>
 
-            <!-- Swiper JS -->
-            <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
-            <!-- Initialize Swiper -->
-            <script>
-		var swiper = new Swiper(".mySwiper", {
-slidesPerView: 3,
-centerMode: true,
-centerPadding: '20px',
-spaceBetween: 30,
-navigation: {
-nextEl: ".swiper-button-next",
-prevEl: ".swiper-button-prev"
-},
-breakpoints: {
-320: {
-slidesPerView: 1,
-spaceBetween: 20
-},
-480: {
-slidesPerView: 1,
-spaceBetween: 20
-},
-768: {
-slidesPerView: 2,
-spaceBetween: 40
-},
-1024: {
-slidesPerView: 3,
-spaceBetween: 50
-},
-1400: {
-slidesPerView: 4,
-spaceBetween: 50
-}
-}
-});
-	</script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    centerMode: true,
+    centerPadding: '20px',
+    spaceBetween: 30,
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+    320: {
+    slidesPerView: 1,
+    spaceBetween: 20
+    },
+    480: {
+    slidesPerView: 1,
+    spaceBetween: 20
+    },
+    768: {
+    slidesPerView: 2,
+    spaceBetween: 40
+    },
+    1024: {
+    slidesPerView: 3,
+    spaceBetween: 50
+    },
+    1400: {
+    slidesPerView: 4,
+    spaceBetween: 50
+    }
+    }
+    });
+</script>
 
-        {% endblock %}
-        
+{% endblock %}

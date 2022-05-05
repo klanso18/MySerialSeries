@@ -97,7 +97,7 @@ Source :  Demon Slayer: Kimetsu no Yaiba",3),
 A true rubber man, thanks to a Demon Fruit, Luffy sets out in search of the One Piece, the treasure that will make him king of the pirates. To hope to realize his dream, Luffy must take the road to Grand Line, also known as the Pirate Graveyard. So he sets out to recruit a crew worthy of the task. 
 One Piece is adapted from the manga created by Eiichiro Oda.</p>
 Source :<a href= \"https://www.crunchyroll.com/fr/one-piece/episode-1-im-luffy-the-man-whos-gonna-be-king-of-the-pirates-650673\">https://www.crunchyroll.com/fr/one-piece/episode-1-im-luffy-the-man-whos-gonna-be-king-of-the-pirates-650673</a>",3),
-(5, 'Attack on Titans', 5, 'attack_on_titans.jpg', "<p><strong>16+, 4 Seasons, Japan.</strong></p>
+(5, 'Attack on Titans', 5, 'attack_on_titans1.jpg', "<p><strong>16+, 4 Seasons, Japan.</strong></p>
 <p><strong>Genres : Anime Series, International TV Shows</strong></p>
 <p>With his hometown in ruins, young Eren Yeager becomes determined to fight back against the giant Titans that threaten to destroy the human race.</p>
 Source :<a href= \" https://www.crunchyroll.com/fr/attack-on-titan\">https://www.crunchyroll.com/fr/attack-on-titan\</a>",3),
