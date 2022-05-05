@@ -51,7 +51,7 @@ class SerieController extends AbstractController
             'categories' => $categoryManager->selectAll()
         ]);
     }
-     /**
+    /**
      * Show informations for a specific item
      */
     public function show(int $id): string
@@ -60,5 +60,37 @@ class SerieController extends AbstractController
         $serie = $serieManager->selectOneById($id);
 
         return $this->twig->render('Serie/index.html.twig', ['serie' => $serie]);
+    }
+    /**
+     * Edit a specific item
+     */
+    public function edit(int $id): ?string
+    {
+        $serieManager = new serieManager();
+        $serie = $serieManager->selectOneById($id);
+        
+       
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // clean $_POST data
+            $serie = array_map('trim', $_POST);
+
+            if (!empty($_FILES['image']['name'])) {
+                $fileName = $_FILES['image']['name'];
+                $uploadFile = __DIR__ . '/../../public/uploads/' . $fileName;
+                move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile);
+                $serie['image'] = $fileName;
+            }
+            $serieManager->update($serie); // if validation is ok, update and redirection
+            header('Location:/serie/edit?id=' . $id); // we are redirecting so we don't want any content rendered
+            return null;
+        }
+        $serie = $serieManager->selectOneById($id);
+        $categoryManager = new CategoryManager();
+        $categories = $categoryManager->selectAll();
+        return $this->twig->render('Serie/edit.html.twig', [
+            'serie' => $serie,
+            'categories' => $categories
+        ]);
     }
 }

@@ -7,9 +7,11 @@
             <label for="category" class="col-sm-2 col-form-label">Category</label>
             <div class="col-sm-10">
                 <select class="form-select" name="category" id="category" aria-label="Default select example">
-                    <option selected>Select a category</option>
+                    <option>Select a category</option>
                         {% for category in categories %}
-                            <option value="{{ category.id }}">{{ category.title }}</option>
+                            <option value="{{ category.id }}" {{ category.id == serie.category_id ? 'selected' }}>
+                                {{ category.title }}
+                            </option>
                         {% endfor %}
                 </select>
             </div>
@@ -17,7 +19,7 @@
         <div class="row mb-3">
             <label for="title" class="col-sm-2 col-form-label">Title</label>
             <div class="col-sm-10">
-                <input type="title" name="title" class="form-control" id="title" aria-describedby="titleHelp" value="{{ serie.serieTitle }}"/>
+                <input type="title" name="title" class="form-control" id="title" aria-describedby="titleHelp" value="{{ serie.title }}"/>
             </div>
         </div>
         <div class="row mb-3">
