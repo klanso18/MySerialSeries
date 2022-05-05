@@ -20,16 +20,16 @@ class UserManager extends AbstractManager
         return $statement->fetch();
     }
 
-    public function insert(array $credentials): int
+    public function insert(array $form): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . static::TABLE .
             " (`email`, `password`, `pseudo`, `firstname`, `lastname`)
         VALUES (:email, :password, :pseudo, :firstname, :lastname)");
-        $statement->bindValue(':email', $credentials['email']);
-        $statement->bindValue(':password', password_hash($credentials['password'], PASSWORD_DEFAULT));
-        $statement->bindValue(':pseudo', $credentials['pseudo']);
-        $statement->bindValue(':firstname', $credentials['firstname']);
-        $statement->bindValue(':lastname', $credentials['lastname']);
+        $statement->bindValue(':email', $form['email']);
+        $statement->bindValue(':password', password_hash($form['password'], PASSWORD_DEFAULT));
+        $statement->bindValue(':pseudo', $form['pseudo']);
+        $statement->bindValue(':firstname', $form['firstname']);
+        $statement->bindValue(':lastname', $form['lastname']);
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }

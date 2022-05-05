@@ -33,10 +33,30 @@
           {% endfor %}
 
           <!--LOGIN&REGISTER-->
-			<li class="nav-item">
-				<a class="nav-link-img" href="#">
+        {% if user %}
+        <li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+								<i class="bi bi-person-circle"></i>
+								{{ user.pseudo }}
+							</a>
+							<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+								<li>
+									<a class="dropdown-item" href="/logout">
+										<i class="bi bi-box-arrow-right"></i>
+										Disconnect
+                    </a>
+								</li>
+							</ul>
+				</li>
+
+          
+        
+        {% else %}
+		  	<li class="nav-item">
+        <a class="nav-link-img" href="#">
 				<img alt="Brand" src="/assets/images/sign-in.png" class="img-responsive" data-bs-toggle="modal" data-bs-target="#loginModal"/></a>
-			</li>
+			  </li>
+        {% endif %}
         </ul>
       </div>
     </div>

@@ -10,19 +10,36 @@ class UserController extends AbstractController
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-            $credentials = array_map('trim', $_POST);
+            $form = array_map('trim', $_POST);
             $userManager = new UserManager();
-            $user = $userManager->selectOneByEmail($credentials['email']);
+            $user = $userManager->selectOneByEmail($form['email']);
 
-            if ($user && password_verify($credentials['password'], $user['password'])) {
+            if ($user && password_verify($form['password'], $user['password'])) {
                 $_SESSION['user_id'] = $user['id'];
                 header('Location: /');
                 exit();
             }
-            
-            return $this->twig->render('user/login.html.twig');
+
+            if (empty($form['email'])) {
+                $errors[] = "Email is required :p";
+            }
+
+            if (empty($form['password'])) {
+                $errors[] =  "Password is required :p";
+            }
+
+            if(empty($errors)) {
+                $userManager = new UserManager();
+                if ($userManager->insert($form)) {
+                    return $this->login();
+                }
         }
+        return $this->twig->render('user/login.html.twig',
+        [
+            'errors' => $errors
+        ]);
     }
+}
 
     public function logout()
     {
@@ -33,13 +50,38 @@ class UserController extends AbstractController
 
     public function register()
     {
+        $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $credentials = $_POST;
-            $userManager = new UserManager();
-            if ($userManager->insert($credentials)) {
-                return $this->login();
+            $form = $_POST;
+            if (empty($form['pseudo'])) {
+                $errors[] = "Pseudo is required :p";
+            }
+            
+            if (empty($form['firstname'])) {
+                $errors[] = "Firstname is required :p";
+            }
+           
+            if (empty($form['lastname'])) {
+                $errors[] =  "Lastname is required :p";
+            }
+
+            if (empty($form['email'])) {
+                $errors[] = "Email required :p";
+            }
+
+            if (empty($form['password'])) {
+                $errors[] =  "Password is required :p";
+            }
+
+            if(empty($errors)) {
+                $userManager = new UserManager();
+                if ($userManager->insert($form)) {
+                    return $this->login();
+                }
             }
         }
-        return $this->twig->render('user/register.html.twig');
+        return $this->twig->render('user/register.html.twig', [
+            'errors' => $errors
+        ]);
     }
 }

@@ -1,49 +1,20 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	<div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModal" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h6 class="modal-title">
-						<ul class="nav nav-tabs">
-							<li class="nav-item">
-								<a class="nav-link active" data-bs-toggle="modal" data-bs-target="#registerModal" href="/register">Register</a>
-							</li>
-						</ul>
-					</h6>
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-				</div>
-
-				<div class="modal-body">
-					<h3>Enter your login details</h3>
-					<form action="/login" id="form-login" method="post">
-						<div class="mb-3">
-							<label for="email" class="form-label">Email</label>
-							<input type="email" class="form-control" id="email" name="email">
-						</div>
-						<div class="mb-3">
-							<label for="password" class="form-label">Password</label>
-							<input type="password" class="form-control" id="password" name="password">
-						</div>
-					</form>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-					<button type="submit" form="form-register" class="btn btn-success">Connect</button>
-				</div>
+	
+		<div class="col-md-8 offset-md-2">
+			<div class="bg-warning p-3 mb-5" role="alert" aria-live="polite" aria-labelledby="alert-message">
+				<h6 id="alert-message">Merci de corriger les erreurs ci-dessous svp :</h6>
+				<ul class="list-unstyled p-0">
+					{% for error in errors %}
+						<li>{{error}}</li>
+					{% endfor %}
+				</ul>
 			</div>
+
+			{% include 'user/_form-login.html.twig' with {'formId': 'form-login-page'} %}
+
+			<button type="submit" form="form-register-page" class="btn btn-success">Connect</button>
 		</div>
-	</div>
-
-	{# <script>
-		function openForm() {
-document.getElementById("popupForm").style.display = "block";
-}
-
-function closeForm() {
-document.getElementById("popupForm").style.display = "none";
-}
-	</script> #}
-
-{%  endblock %}
+	
+{% endblock %}
