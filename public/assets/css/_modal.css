@@ -9,10 +9,23 @@ outline: 0;
 }
 
 .nav-tabs .nav-item.show .nav-link, .nav-tabs .nav-link.active .li.nav-item {
-    color: #303D5D;
-    background-color: #EEEEEE;
+    color: #ECD500;
+    background-color: #303D5D;
     border-color: #EEEEEE;
 }
+
+/* #user-css{
+display: flex;
+flex-direction: row;
+} */
+
+.modal-header {
+    color: #ECD500;
+    background-color: #303D5D;
+    border-color: #EEEEEE;
+}
+
+
 
 .btn-primary {
     color: #ECD500 ;
@@ -25,8 +38,6 @@ outline: 0;
     background-color: #EEEEEE;
     border-color: #EEEEEE;
 }
-
-
 
 /*CREATE AN ACCOUNT*/ 
 .btn-success {

@@ -1,37 +1,20 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
-	<div class="row">
-		<div class="col-md-6 offset-md-3">
-			<h1>Log in</h1>
-			<p>Enter credentials below to be connected.</p>
-
-			<div class="login-popup" id="popupForm">
-				<form action="/login" method="post">
-					<div class="mb-3">
-						<label for="email" class="form-label">Email</label>
-						<input type="email" class="form-control" id="email" name="email">
-					</div>
-					<div class="mb-3">
-						<label for="password" class="form-label">Password</label>
-						<input type="password" class="form-control" id="password" name="password">
-					</div>
-					<button type="submit" class="btn btn-success">Close</button>
-					<button type="button" class="btn cancel" onclick="closeForm()">Connect</button>
-				</form>
+	
+		<div class="col-md-8 offset-md-2">
+			<div class="bg-warning p-3 mb-5" role="alert" aria-live="polite" aria-labelledby="alert-message">
+				<h6 id="alert-message">Merci de corriger les erreurs ci-dessous svp :</h6>
+				<ul class="list-unstyled p-0">
+					{% for error in errors %}
+						<li>{{error}}</li>
+					{% endfor %}
+				</ul>
 			</div>
+
+			{% include 'user/_form-login.html.twig' with {'formId': 'form-login-page'} %}
+
+			<button type="submit" form="form-login-page" class="btn btn-success">Connect</button>
 		</div>
-	</div>
-</div>
-
-<script>
-	function openForm() {
-document.getElementById("popupForm").style.display = "block";
-}
-
-function closeForm() {
-document.getElementById("popupForm").style.display = "none";
-}
-</script>
-
-{%  endblock %}
+	
+{% endblock %}
