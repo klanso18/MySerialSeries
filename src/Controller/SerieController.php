@@ -68,21 +68,19 @@ class SerieController extends AbstractController
     {
         $serieManager = new serieManager();
         $serie = $serieManager->selectOneById($id);
-        
-       
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $serie = array_map('trim', $_POST);
 
             if (!empty($_FILES['image']['name'])) {
-                $fileName = $_FILES['image']['name'];
+                $fileName = basename($_FILES['image']['name']);
                 $uploadFile = __DIR__ . '/../../public/uploads/' . $fileName;
                 move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile);
                 $serie['image'] = $fileName;
             }
             $serieManager->update($serie); // if validation is ok, update and redirection
-            header('Location:/serie/edit?id=' . $id); // we are redirecting so we don't want any content rendered
+            header('Location:/serie/show?id=' . $id); // we are redirecting so we don't want any content rendered
             return null;
         }
         $serie = $serieManager->selectOneById($id);
