@@ -23,12 +23,13 @@ class SerieManager extends AbstractManager
     public function insert(array $serie): int
     {
         $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
-        " (`title`, `description`, `image`, `category_id`) 
-        VALUES (:title, :description, :image, :category_id)");
+        " (`title`, `description`, `image`, `category_id`, `user_id`) 
+        VALUES (:title, :description, :image, :category_id, :user_id)");
         $statement->bindValue('title', $serie['title'], \PDO::PARAM_STR);
         $statement->bindValue('description', $serie['description'], \PDO::PARAM_STR);
         $statement->bindValue('image', $serie['image'], \PDO::PARAM_STR);
         $statement->bindValue('category_id', $serie['category'], \PDO::PARAM_INT);
+        $statement->bindValue('user_id', $serie['user_id'], \PDO::PARAM_INT);
 
         $statement->execute();
         return (int)$this->pdo->lastInsertId();

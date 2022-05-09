@@ -33,6 +33,10 @@ class SerieController extends AbstractController
 
     public function add(): ?string
     {
+        if (!$this->user) {
+            header('Location: /login');
+            return null;
+        }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $serie = array_map('trim', $_POST);
 
@@ -41,8 +45,9 @@ class SerieController extends AbstractController
             if (move_uploaded_file($_FILES['image']['tmp_name'], $uploadFile)) {
                 $serieManager = new SerieManager();
                 $serie['image'] = $fileName;
-                $serieManager->insert($serie);
-                header('Location:/category');
+                $serie['user_id'] = $_SESSION['user_id'];
+                $id = $serieManager->insert($serie);
+                header('Location:/serie/show?id=' . $id);
                 return null;
             }
         }
@@ -64,10 +69,21 @@ class SerieController extends AbstractController
     /**
      * Edit a specific item
      */
-    public function edit(int $id): ?string
+    public function edit(int $id)
     {
         $serieManager = new serieManager();
         $serie = $serieManager->selectOneById($id);
+        if (!$this->user) {
+            header('Location:/register');
+        } elseif ($this->user['id'] !== $serie['user_id']) {
+            header('Location:/login');
+            return null;
+        }
+
+        // if (!$this->user || $this->user['id'] !== $serie['user_id']) {
+        //     header('Location:/login');
+        //     return null;
+        // }
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
