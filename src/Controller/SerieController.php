@@ -72,9 +72,6 @@ class SerieController extends AbstractController
     {
         $serieManager = new serieManager();
         $serie = $serieManager->selectOneById($id);
-        
-       
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $serie = array_map('trim', $_POST);
