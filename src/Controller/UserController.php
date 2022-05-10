@@ -12,7 +12,6 @@ class UserController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             $form = array_map('trim', $_POST);
-            
             if (empty($form['email'])) {
                 $errors[] = "Email is required";
             }
@@ -33,11 +32,9 @@ class UserController extends AbstractController
             }
         }
         return $this->twig->render('user/login.html.twig',
-        [
-            'errors' => $errors
+        ['errors' => $errors
         ]);
     }
-
     public function logout()
     {
         unset($_SESSION['user_id']);
@@ -57,11 +54,9 @@ class UserController extends AbstractController
             if (empty($form['firstname'])) {
                 $errors[] = "Firstname is required :p";
             }
-           
             if (empty($form['lastname'])) {
                 $errors[] =  "Lastname is required :p";
             }
-
             if (empty($form['email'])) {
                 $errors[] = "Email required :p";
             }

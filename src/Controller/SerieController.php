@@ -83,7 +83,6 @@ class SerieController extends AbstractController
             header('HTTP/1.0 403 Forbidden');
             return null;
         }
-        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $serie = array_map('trim', $_POST);
