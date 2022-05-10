@@ -108,4 +108,19 @@ class SerieController extends AbstractController
             'categories' => $categories
         ]);
     }
+
+    public function delete()
+    {
+        if (!$this->user) {
+            header('Location: /login');
+            return null;
+        }
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $serieManager = new SerieManager();
+            $serieManager->delete((int)$id);
+
+            header('Location:/category');
+        }
+    }
 }
