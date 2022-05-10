@@ -29,7 +29,8 @@ CREATE TABLE `user` (
   `lastname` varchar(255) DEFAULT NULL,
   `email` varchar(80) DEFAULT NULL,
   `password` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -42,8 +43,6 @@ LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
-
---
 -- Table structure for table `category`
 --
 
@@ -86,9 +85,12 @@ CREATE TABLE `serie` (
   `image` varchar(45) DEFAULT NULL,
   `description` text, 
   `category_id` int DEFAULT NULL,
+  `user_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_serie_category_idx` (`category_id`),
-  CONSTRAINT `fk_serie_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
+  KEY `fk_serie_user_idx` (`user_id`),
+  CONSTRAINT `fk_serie_category` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`),
+  CONSTRAINT `fk_serie_user` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -98,7 +100,7 @@ CREATE TABLE `serie` (
 
 LOCK TABLES `serie` WRITE;
 /*!40000 ALTER TABLE `serie` DISABLE KEYS */;
-INSERT INTO `serie` VALUES 
+INSERT INTO `serie` (id, title, number_serie, image, description, category_id) VALUES 
 (1, 'Jijutsu kaizen0', 1, 'Jijutsu_kaizen0.jpg', "<p><strong>16+,1 Season, 1 Movie, Japan.</p></strong>
 <p><strong>Genres : Anime Series, International TV Shows</strong></p>
 <p>Yuta Okkotsu is haunted by the spirit of Rika, his childhood friend who died in a car accident. 

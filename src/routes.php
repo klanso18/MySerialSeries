@@ -12,6 +12,7 @@ return [
     'serie' => ['SerieController', 'index',],
     'serie/show' => ['SerieController', 'show', ['id']],
     'serie/edit' => ['SerieController', 'edit', ['id']],
+    'serie/delete' => ['SerieController', 'delete', ['id']],
     'login' => ['UserController', 'login',],
     'logout' => ['UserController', 'logout',],
     'register' => ['UserController', 'register',],
