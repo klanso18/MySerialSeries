@@ -74,9 +74,10 @@ class SerieController extends AbstractController
         $serieManager = new serieManager();
         $serie = $serieManager->selectOneById($id);
         if (!$this->user) {
-            header('Location:/register');
-        } elseif ($this->user['id'] !== $serie['user_id']) {
             header('Location:/login');
+        } elseif ($this->user['id'] !== $serie['user_id']) {
+            echo 'You are forbidden!';
+            header('HTTP/1.0 403 Forbidden');
             return null;
         }
 
