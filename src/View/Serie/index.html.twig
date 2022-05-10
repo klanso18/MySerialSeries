@@ -40,7 +40,12 @@
                     </p>
                 
                 <div class="edit">
-                    <a href="/serie/edit?id={{ serie.id }}" class="btn btn-dark">Edit</a>
+                    {% if serie.user_id == user.id %}
+                    <a class="btn btn-dark"
+                        href="/serie/edit?id={{ serie.id }}">
+                        Edit
+                    </a>
+                    {% endif %}
                 </div>
             </div>
         </div>
