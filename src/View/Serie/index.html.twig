@@ -45,4 +45,63 @@
             </div>
         </div>
     </section>
+
+      <!-- Swiper -->
+    <section class="myseries">
+        <section class="swiper mySwiper mb-5 mx-5">
+            <h3 class="mb-5 mt-5">
+                My series
+            </h3>
+            <div class="swiper-wrapper">
+                {% for i in 1..6 %}
+                    <div class="swiper-slide d-flex flex-column position-relative">
+                        <img class="img-fluid" src="https://fakeimg.pl/60x90/">
+                        <a class="stretched-link" href="#"></a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </section>
+    </section>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    centerMode: true,
+    centerPadding: '20px',
+    spaceBetween: 30,
+    navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+    320: {
+    slidesPerView: 1,
+    spaceBetween: 20
+    },
+    480: {
+    slidesPerView: 1,
+    spaceBetween: 20
+    },
+    768: {
+    slidesPerView: 2,
+    spaceBetween: 40
+    },
+    1024: {
+    slidesPerView: 3,
+    spaceBetween: 50
+    },
+    1400: {
+    slidesPerView: 4,
+    spaceBetween: 50
+    }
+    }
+    });
+    </script>
 {% endblock %}
