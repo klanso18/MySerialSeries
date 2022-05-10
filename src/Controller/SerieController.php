@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Model\CategoryManager;
 use App\Model\SerieManager;
+use App\Model\CategoryManager;
 
 class SerieController extends AbstractController
 {
@@ -58,9 +58,13 @@ class SerieController extends AbstractController
     {
         $serieManager = new SerieManager();
         $serie = $serieManager->selectOneById($id);
-
-        return $this->twig->render('Serie/index.html.twig', ['serie' => $serie]);
+        $suggestedSeries = $serieManager->selectSuggestedSeries();
+        return $this->twig->render('Serie/index.html.twig', [
+            'serie' => $serie,
+            'suggestedSeries' => $suggestedSeries
+        ]);
     }
+
     /**
      * Edit a specific item
      */

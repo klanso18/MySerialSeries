@@ -59,4 +59,18 @@ class SerieManager extends AbstractManager
 
             return $statement->execute();
     }
+
+    /**
+     * selectectionner les séries que l'utilisateur n'a pas vu en entier
+     * 
+     */
+    public function selectSuggestedSeries()
+    {
+        $query = "SELECT * FROM " . self::TABLE . " LEFT JOIN seen ON seen.serie_id=serie.id 
+            WHERE seen.status!='completed' AND seen.user_id!=:user_id ORDER BY RAND() LIMIT 10";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('user_id', $_SESSION['user_id']);
+        $statement->execute();
+        return $statement->fetchAll();
+    }
 }
