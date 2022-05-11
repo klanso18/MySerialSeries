@@ -10,27 +10,34 @@
                             {{ serie.title }}
                         </h2>
                     </div>
-                    <div class="form">
-                        <form>
-                            <select name="seen" id="seen">
-                                <option value="seen">
-                                    Seen
-                                                                    
-                                </option>
-                                <option value="p-seen">
-                                    Partially seen
-                                                                    
-                                </option>
-                                <option value="n-seen">
-                                    Not seen
-                                                                    
-                                </option>
-                            </select>
-                        </form>
-                    </div>
+                   
                 </div>
                 <img class="img-fluid" src="/uploads/{{ serie.image }}"></div>
                 <div class="description">
+
+                 <div class="form">
+                        <form action ="/seen/update" method="post">
+                        <input type="hidden" name="serie_id" value="{{serie.id}}">
+                       <div class="input-group">
+                            <select class="form-select" name="status" id="seen">
+                                <option value="none" {% if seen.status == 'none' %} selected {% endif %}>
+                                    Not seen                            
+                                </option>
+                                <option value="partial" {% if seen.status == 'partial' %} selected {% endif %}>
+                                    Partially seen                         
+                                </option>
+                                <option value="completed" {% if seen.status == 'completed' %} selected {% endif %}>
+                                    Seen                 
+                                </option>
+                            </select>
+                            {% if user %}
+                            <button class="btn btn-dark" type="submit">Update</button>
+                            {% else %}
+                            <p>connectez-vous pour pouvoir indiquer si vous avez vu cette série....</p>
+                            {% endif %}
+                        </div>
+                        </form>
+                    </div>
                     <h2>
                         Synopsis
                                             
@@ -52,16 +59,21 @@
     </section>
 
       <!-- Swiper -->
+    {% if suggestedSeries %}
     <section class="myseries">
         <section class="swiper mySwiper mb-5 mx-5">
             <h3 class="mb-5 mt-5">
-                My series
+             My suggestions
             </h3>
             <div class="swiper-wrapper">
-                {% for i in 1..6 %}
+            
+                {% for serieSuggested in suggestedSeries|filter(serieSuggested => (serieSuggested.status == 'none' or serieSuggested.status == 'partial') 
+                and serieSuggested.seenUserId == user.id and serieSuggested.id != serie.id )|slice(0,10) %}
                     <div class="swiper-slide d-flex flex-column position-relative">
-                        <img class="img-fluid" src="https://fakeimg.pl/60x90/">
-                        <a class="stretched-link" href="#"></a>
+                        <img class="img-fluid" src='/uploads/{{ serieSuggested.image }}'>
+                        <a class="stretched-link" href="/serie/show?id={{ serieSuggested.id }}">
+                            {{ serieSuggested.title }}
+                        </a>
                     </div>
                 {% endfor %}
             </div>
@@ -70,6 +82,7 @@
             <div class="swiper-pagination"></div>
         </section>
     </section>
+    {% endif %}
 
     <!-- Swiper JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>

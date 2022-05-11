@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\SeenManager;
 use App\Model\SerieManager;
 use App\Model\CategoryManager;
 
@@ -63,9 +64,12 @@ class SerieController extends AbstractController
     {
         $serieManager = new SerieManager();
         $serie = $serieManager->selectOneById($id);
-        $suggestedSeries = $serieManager->selectSuggestedSeries();
+        $suggestedSeries = $this->user ? $serieManager->selectSuggestedSeries($this->user['id']) : [];
+        $seenManager = new SeenManager();
+        $seen = $this->user ? $seenManager->selectSeenBySerieId($id, $this->user['id']) : [];
         return $this->twig->render('Serie/index.html.twig', [
             'serie' => $serie,
+            'seen' => $seen,
             'suggestedSeries' => $suggestedSeries
         ]);
     }
@@ -77,6 +81,7 @@ class SerieController extends AbstractController
     {
         $serieManager = new serieManager();
         $serie = $serieManager->selectOneById($id);
+
         if (!$this->user) {
             header('Location:/login');
         } elseif ($this->user['id'] !== $serie['user_id']) {
