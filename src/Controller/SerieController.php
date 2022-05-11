@@ -2,8 +2,9 @@
 
 namespace App\Controller;
 
-use App\Model\CategoryManager;
+use App\Model\SeenManager;
 use App\Model\SerieManager;
+use App\Model\CategoryManager;
 
 class SerieController extends AbstractController
 {
@@ -63,8 +64,9 @@ class SerieController extends AbstractController
     {
         $serieManager = new SerieManager();
         $serie = $serieManager->selectOneById($id);
-
-        return $this->twig->render('Serie/index.html.twig', ['serie' => $serie]);
+        $seenManager = new SeenManager();
+        $seen = $seenManager->selectSeenBySerieId($id);
+        return $this->twig->render('Serie/index.html.twig', ['serie' => $serie, 'seen' => $seen]);
     }
     /**
      * Edit a specific item
@@ -73,6 +75,7 @@ class SerieController extends AbstractController
     {
         $serieManager = new serieManager();
         $serie = $serieManager->selectOneById($id);
+
         if (!$this->user) {
             header('Location:/login');
         } elseif ($this->user['id'] !== $serie['user_id']) {
@@ -80,12 +83,7 @@ class SerieController extends AbstractController
             header('HTTP/1.0 403 Forbidden');
             return null;
         }
-
-        // if (!$this->user || $this->user['id'] !== $serie['user_id']) {
-        //     header('Location:/login');
-        //     return null;
-        // }
-
+        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $serie = array_map('trim', $_POST);

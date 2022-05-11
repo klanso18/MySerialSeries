@@ -43,7 +43,6 @@ LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
 -- Table structure for table `category`
 --
 
@@ -205,7 +204,7 @@ DROP TABLE IF EXISTS `seen`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `seen` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `is_completed` tinyint DEFAULT NULL,
+  `status` VARCHAR(75) DEFAULT NULL,
   `user_id` int DEFAULT NULL,
   `serie_id` int DEFAULT NULL,
   PRIMARY KEY (`id`),
