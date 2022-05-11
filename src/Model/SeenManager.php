@@ -11,7 +11,7 @@ class SeenManager extends AbstractManager
      */
     public function insert(array $seen): int
     {
-        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE .
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . 
         " (`status`, `serie_id`, `user_id`) VALUES (:status, :serie_id, :user_id)");
         $statement->bindValue('status', $seen['status'], \PDO::PARAM_STR);
         $statement->bindValue('serie_id', $seen['serie_id'], \PDO::PARAM_INT);
@@ -38,7 +38,7 @@ class SeenManager extends AbstractManager
      */
     public function selectSeenBySerieId(int $serieId, int $userId): array|false
     {
-        $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE .
+        $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . 
         " WHERE serie_id=:serie_id AND user_id=:user_id");
         $statement->bindValue('serie_id', $serieId, \PDO::PARAM_INT);
         $statement->bindValue('user_id', $userId, \PDO::PARAM_INT);

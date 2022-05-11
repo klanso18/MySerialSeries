@@ -27,9 +27,11 @@ class UserController extends AbstractController
                 }
             }
         }
-        return $this->twig->render('user/login.html.twig', ['errors' => $errors]);
-    }
 
+        return $this->twig->render('user/login.html.twig',
+        ['errors' => $errors
+        ]);
+    }
     public function logout()
     {
         unset($_SESSION['user_id']);
