@@ -10,20 +10,16 @@ class UserController extends AbstractController
     {
         $errors = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
             $form = array_map('trim', $_POST);
             if (empty($form['email'])) {
                 $errors[] = "Email is required";
             }
-
             if (empty($form['password'])) {
                 $errors[] =  "Password is required";
             }
-
-            if(empty($errors)) {
+            if (empty($errors)) {
                 $userManager = new UserManager();
                 $user = $userManager->selectOneByEmail($form['email']);
-
                 if ($user && password_verify($form['password'], $user['password'])) {
                     $_SESSION['user_id'] = $user['id'];
                     header('Location: /');
@@ -31,6 +27,7 @@ class UserController extends AbstractController
                 }
             }
         }
+
         return $this->twig->render('user/login.html.twig',
         ['errors' => $errors
         ]);
@@ -50,7 +47,6 @@ class UserController extends AbstractController
             if (empty($form['pseudo'])) {
                 $errors[] = "Pseudo is required :p";
             }
-            
             if (empty($form['firstname'])) {
                 $errors[] = "Firstname is required :p";
             }
@@ -60,12 +56,10 @@ class UserController extends AbstractController
             if (empty($form['email'])) {
                 $errors[] = "Email required :p";
             }
-
             if (empty($form['password'])) {
                 $errors[] =  "Password is required :p";
             }
-
-            if(empty($errors)) {
+            if (empty($errors)) {
                 $userManager = new UserManager();
                 if ($userManager->insert($form)) {
                     return $this->login();

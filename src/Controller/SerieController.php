@@ -20,18 +20,6 @@ class SerieController extends AbstractController
         ]);
     }
 
-    /**
-     * Show informations for a specific item
-     */
-    // public function show(int $id): string
-    // {
-    //     $serieManager = new SerieManager();
-    //     $serie = $serieManager->selectOneById($id);
-
-    //     return $this->twig->render('Serie/index.html.twig', ['serie' => $serie]);
-    // }
-
-
     public function add(): ?string
     {
         if (!$this->user) {
@@ -64,10 +52,16 @@ class SerieController extends AbstractController
     {
         $serieManager = new SerieManager();
         $serie = $serieManager->selectOneById($id);
+        $suggestedSeries = $this->user ? $serieManager->selectSuggestedSeries($this->user['id']) : [];
         $seenManager = new SeenManager();
         $seen = $this->user ? $seenManager->selectSeenBySerieId($id, $this->user['id']) : [];
-        return $this->twig->render('Serie/index.html.twig', ['serie' => $serie, 'seen' => $seen]);
+        return $this->twig->render('Serie/index.html.twig', [
+            'serie' => $serie,
+            'seen' => $seen,
+            'suggestedSeries' => $suggestedSeries
+        ]);
     }
+
     /**
      * Edit a specific item
      */
@@ -116,7 +110,6 @@ class SerieController extends AbstractController
             $id = trim($_POST['id']);
             $serieManager = new SerieManager();
             $serieManager->delete((int)$id);
-
             header('Location:/category');
         }
     }
