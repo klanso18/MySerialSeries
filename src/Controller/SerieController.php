@@ -64,10 +64,16 @@ class SerieController extends AbstractController
     {
         $serieManager = new SerieManager();
         $serie = $serieManager->selectOneById($id);
+        $suggestedSeries = $this->user ? $serieManager->selectSuggestedSeries($this->user['id']) : [];
         $seenManager = new SeenManager();
-        $seen = $seenManager->selectSeenBySerieId($id);
-        return $this->twig->render('Serie/index.html.twig', ['serie' => $serie, 'seen' => $seen]);
+        $seen = $this->user ? $seenManager->selectSeenBySerieId($id, $this->user['id']) : [];
+        return $this->twig->render('Serie/index.html.twig', [
+            'serie' => $serie,
+            'seen' => $seen,
+            'suggestedSeries' => $suggestedSeries
+        ]);
     }
+
     /**
      * Edit a specific item
      */
@@ -83,7 +89,6 @@ class SerieController extends AbstractController
             header('HTTP/1.0 403 Forbidden');
             return null;
         }
-        
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $serie = array_map('trim', $_POST);
