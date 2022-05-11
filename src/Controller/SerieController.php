@@ -65,7 +65,7 @@ class SerieController extends AbstractController
         $serieManager = new SerieManager();
         $serie = $serieManager->selectOneById($id);
         $seenManager = new SeenManager();
-        $seen = $seenManager->selectSeenBySerieId($id);
+        $seen = $this->user ? $seenManager->selectSeenBySerieId($id, $this->user['id']) : [];
         return $this->twig->render('Serie/index.html.twig', ['serie' => $serie, 'seen' => $seen]);
     }
     /**

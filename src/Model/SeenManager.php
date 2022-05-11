@@ -36,12 +36,12 @@ class SeenManager extends AbstractManager
     /**
      * Get one row from database by ID.
      */
-    public function selectSeenBySerieId(int $serieId): array|false
+    public function selectSeenBySerieId(int $serieId, int $userId): array|false
     {
         $statement = $this->pdo->prepare("SELECT * FROM " . self::TABLE . 
         " WHERE serie_id=:serie_id AND user_id=:user_id");
         $statement->bindValue('serie_id', $serieId, \PDO::PARAM_INT);
-        $statement->bindValue('user_id', $_SESSION['user_id'], \PDO::PARAM_INT);
+        $statement->bindValue('user_id', $userId, \PDO::PARAM_INT);
         $statement->execute();
 
         return $statement->fetch();

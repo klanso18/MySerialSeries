@@ -15,7 +15,7 @@ class SeenController extends AbstractController
         }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $serieId = trim($_POST['serie_id']);
-            $seen = $seenManager->selectSeenBySerieId($serieId);
+            $seen = $seenManager->selectSeenBySerieId($serieId, $this->user['id']);
             if ($seen) {
                 //si un enregistrement a été trouvé en BDD
                 $seen['status'] = $_POST['status'];
